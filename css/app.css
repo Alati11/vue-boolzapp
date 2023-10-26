@@ -11,37 +11,47 @@ menu {
 }
 
 img {
-    max-width: 20%;
+    max-width: 25%;
 }
 
-.col-3 {
-	flex-basis: calc((100% / 12) * 3);
-   
+.col-4 {
+	flex-basis: calc((100% / 12) * 4);  
 }
+.col-3 {
+	flex-basis: calc((100% / 12) * 3);  
+}
+
+.col-8 {
+	flex-basis: calc((100% / 12) * 8);
+    display: flex;
+    flex-direction: column;
+}
+
 .col-9 {
-	flex-basis: calc((100% / 12) * 9);
- 
+	flex-basis: calc((100% / 12) * 9);  
 }
 
 .container-xl {
-    max-width: 1200px;
+    max-width: 900px;
     /* height: 80vh; */
     border: 2px solid red;
     margin: 50px auto; 
 }
 
+/* header page */
 .header-page {
     display: flex;
+    height: 100px;
 }
+
 .header-page__avatar {
-    border: 2px solid black;
+    border: 1px solid black;
     padding: 15px;
-    flex-grow: 2;
-    background-color: lightgray;
+    background-color: #EAEAEA;
 }
-.content {
-    display:flex;  
-    height: 73vh;
+
+.text-name {
+    margin:10px;  
 }
 
 .card-left {
@@ -56,25 +66,104 @@ img {
     align-items: center;
 }
 
-/* .icon { 
-    padding: 8px;
-    width: 100px;
-} */
+.icon-header { 
+    padding: 10px;
+    margin:5px;
+    width: 15px;
+    align-items: center;
+    color: #979797;
+}
 
 .img-icon {
-width: 200px;
+border-radius: 50%;
+width:200px;
+display: flex;
+align-items: center;
+}
+
+.icon {
+    display:flex;
+    color:white;
+    padding: 5px;
+}
+
+/* CONTACT */
+.icon-notification {
+    font-size: 25px;
+    padding: 5px;
+    background-color: white;
+    border-radius: 999%;
+    color: #8EDAFA;
+    align-items: center; 
+}
+
+.notification {
+    display: flex;
+    padding: 10px;
+    background-color: #8EDAFA;
+}
+
+.notification__text {
+    padding: 5px;
+    font-size: 14px;
+}
+
+.contact-avatar {
+    border: 1px solid currentColor;
+    display: flex;
+    height: 50px; 
+}
+
+.contact-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact__info {
+    flex-grow: 1;
+    justify-content: flex-start;  
+}
+
+.contact__text {
+    color: gray;
+    font-size: 12px;
+}
+
+/* CONTENT */
+.content {
+    display:flex;  
+    height: 73vh;
+}
+
+.search-input {
+    width: 100%;
+    height: 30px;
+    border: 1px solid currentColor;
 }
 
 .chat {
-    background-color: ;
+    background-color: #DFD8CF;
+    flex-grow: 1; 
 }
 
+ /* TOOLBAR */
  .toolbar {
-    align-self: baseline;
-    margin-top: 502px;
     height: 50px;
+    background-color: #EAEAEA;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 25px;
  }
 
-.debug {
+ .input-message {
+    width: 450px;
+    height: 30px;
+    border-radius: 5px;
+    border:none;
+ }
+
+/* .debug {
     border: 1px solid green;
-}
+} */
