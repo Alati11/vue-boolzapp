@@ -51,11 +51,12 @@ img {
 /* header page */
 .header-page {
     display: flex;
-    height: 100px;
+    align-items: center;
+    height:60   px;
 }
 
 .header-page__avatar {
-    border: 1px solid black;
+    border: 1px solid lightgray;
     padding: 15px;
     background-color: #EAEAEA;
 }
@@ -64,13 +65,7 @@ img {
     margin:10px;  
 }
 
-.card-left {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.card-right {
+.card {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -79,16 +74,18 @@ img {
 .icon-header { 
     padding: 10px;
     margin:5px;
-    width: 15px;
+    width: 25px;
+    font-size: 20px;
     align-items: center;
     color: #979797;
 }
 
 .img-icon {
 border-radius: 50%;
-width:200px;
+width:200px;    
 display: flex;
 align-items: center;
+
 }
 
 .icon {
@@ -118,25 +115,37 @@ align-items: center;
     font-size: 14px;
 }
 
-.contact-avatar {
-    border: 1px solid currentColor;
+.contacts {
+	overflow-y: scroll;
+}
+
+.contact {
     display: flex;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    border-bottom:  1px solid lightgray;
     height: 50px; 
 }
 
 .contact-img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 10px;  
 }
 
 .contact__info {
-    flex-grow: 1;
-    justify-content: flex-start;  
+ 
 }
 
 .contact__text {
     color: gray;
+    font-size: 12px;
+    align-items: center;
+    justify-content: center;
+}
+
+.time {
     font-size: 12px;
 }
 
@@ -155,6 +164,26 @@ align-items: center;
 .chat {
     background-image: url('../img/mine.jpg');
     flex-grow: 1; 
+    display: flex;
+    flex-direction: column; 
+    gap: 13px;
+    padding: 30px;
+}
+
+.message {
+	border-radius: 16px;
+	padding: 10px 20px; 
+	max-width: 70%;
+}
+
+.message.sent {
+	background-color: #d5f9ba;
+	align-self: flex-end;
+}
+
+.message.received {
+	background-color: white;
+	align-self: flex-start;
 }
 
  /* TOOLBAR */

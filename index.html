@@ -15,7 +15,7 @@
             <!-- <HEADER> -->
             <header class="header-page">
                 <div class="col-4 header-page__avatar">
-                    <div class="card-left">
+                    <div class="card">
                         <div class="img-icon">
                             <img class="img-icon" src="./img/avatar_io.jpg" alt="">
                             <h4 class="text-name">Sofia</h4>
@@ -31,16 +31,19 @@
                   
                 </div>
                 <div class="col-8 header-page__avatar">
-                    <div class="card-right">
+                    <div class="card">
                         <div class="img-icon">
                             <img class="img-icon" src="./img/avatar_1.jpg" alt="">
-                            <h4 class="text-name">Michele</h4>
+                            <div class="">
+                                <h4 class="text-name">Michele</h4>
+                                <p class="contact__text">Ultimo accesso oggi alle 12:00</p>
+                            </div>
                         </div>                       
                         <div>
                             <ul class="icon">
                                 <li class="icon-header"><i class="fa-solid fa-magnifying-glass"></i></li>
-                                <li class="icon-header"><i class="fa-solid fa-bars"></i></li>
-                                <li class="icon-header"><i class="fa-solid fa-message"></i></li>
+                                <li class="icon-header"><i class="fa-solid fa-paperclip"></i></li>
+                                <li class="icon-header"><i class="fa-solid fa-ellipsis-vertical"></i></li>
                             </ul>
                         </div>
                     </div>
@@ -63,28 +66,33 @@
                     <div class="search">
                         <input class="search-input" type="text" placeholder=" Cerca o inizia una nuova chat">
                     </div>
-                    <ul>
-                        <li>
-                            <div class="contact-avatar">
-                                <div class="col-3 contact-img">
+
+                    <!-- LISTA CONTATTI -->
+                    <ul class="contacts">
+                        <li class="contact">
+                            <div class="contact-card">
+                                <figure class="contact-img">
                                     <img class="img-icon" src="./img/avatar_5.jpg" alt="">
-                                </div>
-                                <div class="col-9 contact__info">
-                                    <h4>Michele</h4>
+                                </figure>
+                                <div class="contact__info">
+                                    <h4 class="contact__name">Michele</h4>
                                     <p class="contact__text">Ultimo messaggio inviato</p>
                                 </div>
+                                <span class="time">12:00</span>
                             </div>
-                        </li>  
+                        </li>   
                     </ul>
                 </div>
                 <!-- FINE SEZIONE CONTATTI -->
 
                 <!-- INZIO CHAT -->
                 <div class="col-8 debug">
-                    <div class="chat">
-                        chat
-                    
-                    </div>
+                    <ul class="chat">
+                        <li class="message sent">Hai portato a spasso il cane?</li>
+                        <li class="message sent">Hai fatto la spesa?</li>
+                        <li class="message received">Fatto tutto!</li>
+                    </ul>
+      
                     <!-- FINE CHAT -->
 
                     <!-- TOOLBAR -->
