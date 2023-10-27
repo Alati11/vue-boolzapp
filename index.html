@@ -18,7 +18,7 @@
                     <div class="card">
                         <div class="img-icon">
                             <img class="img-icon" src="./img/avatar_2.jpg" alt="">
-                            <h4 class="text-name">Giuseppe</h4>
+                            <h4 class="text-name">{{userName}}</h4>
                         </div>
                         <div>
                             <ul class="icon">
@@ -69,7 +69,9 @@
                         <li v-for="(contact, index) in contacts"
                             :key="i"
                             class="contact"
-                            :class="{'active': i === currentIndex}">
+                            :class="{'active': i === currentIndex}"
+                            :class="(index == currentContact ? 'contact-active' : null)" 
+                            @click="setIndexContact(index)">
                         
                             <div class="contact-card">
                                 <figure class="contact-img">
@@ -91,7 +93,7 @@
                     <ul class="chat">
                         <li class="message sent">Hai portato a spasso il cane?</li>
                         <li class="message sent">Hai fatto la spesa?</li>
-                        <li class="message received">Fatto tutto!</li>
+                        <li class="message received">{{contacts[currentIndex].messages }}</li>
                     </ul>
       
                     <!-- FINE CHAT -->

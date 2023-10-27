@@ -133,6 +133,10 @@ align-items: center;
     margin: 10px;  
 }
 
+.contacts__item.active {
+	background-color: #d2dbdc;
+}
+
 .contact__info {
  
 }

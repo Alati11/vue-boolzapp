@@ -3,7 +3,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            userName: 'Gian',
+            userName: 'Giuseppe',
 			currentIndex: 2,
 			dateFormat: 'dd/LL/yyyy ',
             contacts: [
@@ -169,11 +169,24 @@ createApp({
 					],
 				},
 			],
+
+            currentContact: 0,  //index contatto
+            currentMessage: null,   //index messaggio
+            messageText: "",    //campo vuoto messaggio
+            search: "",
       
         }
     },
+    methods: {
+        setIndexContact: function(position) {
+            this.currentContact = position;
+            return this.currentContact;
+        },
+
+    },
+  
     mounted () {
         console.log('Vue Ok!');
-        console.log(contacts);
+        
     }
 }).mount('#app')
