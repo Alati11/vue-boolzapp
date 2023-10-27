@@ -17,25 +17,23 @@
                 <div class="col-4 header-page__avatar">
                     <div class="card">
                         <div class="img-icon">
-                            <img class="img-icon" src="./img/avatar_io.jpg" alt="">
-                            <h4 class="text-name">Sofia</h4>
+                            <img class="img-icon" src="./img/avatar_2.jpg" alt="">
+                            <h4 class="text-name">Giuseppe</h4>
                         </div>
-                        
                         <div>
                             <ul class="icon">
                                 <li class="icon-header"><i class="fa-solid fa-message"></i></li>
                             </ul>
                          </div>
-                        
                     </div>
-                  
                 </div>
+
                 <div class="col-8 header-page__avatar">
                     <div class="card">
                         <div class="img-icon">
                             <img class="img-icon" src="./img/avatar_1.jpg" alt="">
                             <div class="">
-                                <h4 class="text-name">Michele</h4>
+                                <h4 class="text-name">{{contacts[currentIndex].name }}</h4>
                                 <p class="contact__text">Ultimo accesso oggi alle 12:00</p>
                             </div>
                         </div>                       
@@ -50,16 +48,15 @@
                 </div>
             </header>
 
+                     <!-- INIZIO SEZIONE CONTATTI -->
            <section>
             <div class="content">
                 <div class="col-4 debug">
-
-                    <!-- INIZIO SEZIONE CONTATTI -->
                     <div class="notification">
                         <div class="icon-notification"><i class="fa-solid fa-bell-slash"></i></div  >
                         <div class="notification__text">
                             <h4>Ricevi notifiche di nuovi messaggi</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur </p>
+                            <p>Attiva notifiche</p>
                         </div>
                     </div>
 
@@ -69,13 +66,17 @@
 
                     <!-- LISTA CONTATTI -->
                     <ul class="contacts">
-                        <li class="contact">
+                        <li v-for="(contact, index) in contacts"
+                            :key="i"
+                            class="contact"
+                            :class="{'active': i === currentIndex}">
+                        
                             <div class="contact-card">
                                 <figure class="contact-img">
-                                    <img class="img-icon" src="./img/avatar_5.jpg" alt="">
+                                    <img class="img-icon" :src="contact.avatar" alt="">
                                 </figure>
                                 <div class="contact__info">
-                                    <h4 class="contact__name">Michele</h4>
+                                    <h4 class="contact__name">{{contact.name}}</h4>
                                     <p class="contact__text">Ultimo messaggio inviato</p>
                                 </div>
                                 <span class="time">12:00</span>

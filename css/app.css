@@ -125,7 +125,6 @@ align-items: center;
 
 .contact-card {
     display: flex;
-    align-items: center;
     border-bottom:  1px solid lightgray;
     height: 50px; 
 }
@@ -147,6 +146,7 @@ align-items: center;
 
 .time {
     font-size: 12px;
+    padding: 6px;
 }
 
 /* CONTENT */
