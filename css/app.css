@@ -132,7 +132,7 @@ align-items: center;
 }
 
 .active {
-	background-color: lightgrey;
+	background-color: rgba(241, 242, 245, 0.968);
 }
 
 .contact__info {
@@ -151,7 +151,7 @@ align-items: center;
     font-size: 12px;
     padding: 6px;
     margin-left: auto;
-    color: lightgray;
+    color: lightgray;   
 }
 
 /* CONTENT */

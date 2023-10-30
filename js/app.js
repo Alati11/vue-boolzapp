@@ -195,7 +195,7 @@ createApp({
 				()=> {
 					let newReceivedMessage = {	
 						date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
-						message: " Ok ",
+						message: "Ok!",
 						status: 'received'
 					};
 
@@ -206,13 +206,27 @@ createApp({
 
 		},
 
-		filteredContacts() {
-			return this.contacts.filter(
-				element => {
-					return element.name.toLocaleLowerCase().includes(this.search.toLowerCase());
-				}
-			);
-		}
+		
+		searchContact(){
+
+            
+            let search = this.filterMsg.toLowerCase();
+
+            console.log(search);
+
+            
+            this.contacts.forEach((utente) => {
+
+                if (contacts.name.toLowerCase().includes(search)) {
+                    
+                    contacts.visible = true;
+                } else {
+                    
+                    contacts.visible = false;
+                }
+            });
+
+        },
 	},
 
 	mounted() {
