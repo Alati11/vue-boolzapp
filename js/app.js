@@ -179,17 +179,20 @@ createApp({
 		setIndexContact (position) {
 			this.currentIndex = position;
 		},
+
+		sendMessage (currentContact) {
 			
-		sendMessage (contact) {
-			
-				const newMessage = {
+				const text = this.newTextMessage.trim()
+				if (text !== ' '){ 
+					const newMessage = {
 					date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
 					message: this.messageText,
 					status: 'sent'
+					}
+					// this.filteredContacts[contact].messages.push(newMessage);
+					this.filteredContacts[contact].messages.push(newMessage);
 				}
-				
-			this.contacts[currentIndex].messages.push(newMessage);
-			this.messageText = '';
+					this.messageText = '';
 
 			// setTimeout(
 			// 	()=> {
