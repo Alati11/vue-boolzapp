@@ -16,7 +16,7 @@
             <header class="header-page">
                 <div class="col-4 header-page__avatar">
                     <div class="card">
-                        <div class="img-icon">
+                        <div class="card-img">
                             <img class="img-icon" src="./img/avatar_2.jpg" alt="">
                             <h4 class="text-name">{{userName}}</h4>
                         </div>
@@ -30,9 +30,9 @@
 
                 <div class="col-8 header-page__avatar">
                     <div class="card">
-                        <div class="img-icon">
+                        <div class="card-img">
                             <img class="img-icon" src="./img/avatar_1.jpg" alt="">
-                            <div class="">
+                            <div>
                                 <h4 class="text-name">{{contacts[currentIndex].name }}</h4>
                                 <p class="contact__text">Ultimo accesso oggi alle 12:00</p>
                             </div>
@@ -61,7 +61,8 @@
                     </div>
 
                     <div class="search">
-                        <input class="search-input" type="text" placeholder=" Cerca o inizia una nuova chat">
+                        <input class="search-input" type="text" placeholder=" Cerca o inizia una nuova chat" 
+                            v-model="search" @keydown.enter="filteredContacts()">
                     </div>
 
                     <!-- LISTA CONTATTI -->
@@ -70,7 +71,7 @@
                             :key="i"
                             class="contact"
                             :class="{'active': i === currentIndex}"
-                            :class="(index == currentContact ? 'contact-active' : null)" 
+                            :class="(index == currentContact ? 'active' : null)" 
                             @click="setIndexContact(index)">
                         
                             <div class="contact-card">
@@ -82,7 +83,9 @@
                                     <p class="contact__text">Ultimo messaggio inviato</p>
                                 </div>
                                 <span class="time">12:00</span>
+                                
                             </div>
+                            
                         </li>   
                     </ul>
                 </div>
@@ -90,18 +93,18 @@
 
                 <!-- INZIO CHAT -->
                 <div class="col-8 debug">
-                    <ul class="chat">
-                        <li class="message sent">Hai portato a spasso il cane?</li>
-                        <li class="message sent">Hai fatto la spesa?</li>
-                        <li class="message received">{{contacts[currentIndex].messages }}</li>
+                    <ul class="chat ">
+                        <li class="message" :class="message.status" v-for="(message, index) in contacts[currentIndex].messages">
+                            {{ message.message }}
+                        </li>
                     </ul>
-      
-                    <!-- FINE CHAT -->
+    
 
                     <!-- TOOLBAR -->
                     <div class="toolbar">
                         <span class="icon-header"><i class="fa-regular fa-face-smile"></i></span>
-                        <div><input class="input-message" type="text" placeholder="Scrivi messaggio"></div>
+                        <input class="input_message" type="text" placeholder="Scrivi messaggio"
+                            v-model="messageText" @keydown.enter="sendMessage(currentContact)">
                         <span class="icon-header"><i class="fa-solid fa-microphone"></i></span>
                     </div>
                 </div> 

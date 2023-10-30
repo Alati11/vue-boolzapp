@@ -22,7 +22,7 @@ menu {
 }
 
 img {
-    max-width: 25%;
+    max-width: 100%;
 }
 
 .col-4 {
@@ -52,12 +52,12 @@ img {
 .header-page {
     display: flex;
     align-items: center;
-    height:60   px;
+    height:60px;
 }
 
 .header-page__avatar {
     border: 1px solid lightgray;
-    padding: 15px;
+    padding: 10px;
     background-color: #EAEAEA;
 }
 
@@ -69,6 +69,7 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 50px;
 }
 
 .icon-header { 
@@ -82,10 +83,15 @@ img {
 
 .img-icon {
 border-radius: 50%;
-width:200px;    
+width: 60px;   
+padding: 5px; 
 display: flex;
 align-items: center;
+}
 
+.card-img { 
+    display: flex;
+    align-items: center;
 }
 
 .icon {
@@ -117,32 +123,26 @@ align-items: center;
 
 .contacts {
 	overflow-y: scroll;
-}
 
-.contact {
-    display: flex;
 }
 
 .contact-card {
     display: flex;
     border-bottom:  1px solid lightgray;
-    height: 50px; 
+    height: 60px;
 }
 
-.contact-img {
-    margin: 10px;  
-}
-
-.contacts__item.active {
-	background-color: #d2dbdc;
+.active {
+	background-color: gray;
 }
 
 .contact__info {
- 
+    flex-grow: 2;
+    margin-top: 10px;
 }
 
 .contact__text {
-    color: gray;
+    color: lightgray;
     font-size: 12px;
     align-items: center;
     justify-content: center;
@@ -151,12 +151,14 @@ align-items: center;
 .time {
     font-size: 12px;
     padding: 6px;
+    margin-left: auto;
+    color: lightgray;
 }
 
 /* CONTENT */
 .content {
     display:flex;  
-    height: 73vh;
+    height: 80vh;
 }
 
 .search-input {
@@ -200,7 +202,7 @@ align-items: center;
     padding: 25px;
  }
 
- .input-message {
+ .input_message {
     width: 450px;
     height: 30px;
     border-radius: 5px;

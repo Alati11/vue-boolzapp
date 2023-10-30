@@ -1,12 +1,12 @@
 const { createApp } = Vue;
 
 createApp({
-    data() {
-        return {
-            userName: 'Giuseppe',
-			currentIndex: 2,
+	data() {
+		return {
+			userName: 'Giuseppe',
+			currentIndex: 0,
 			dateFormat: 'dd/LL/yyyy ',
-            contacts: [
+			contacts: [
 				{
 					name: 'Michele',
 					avatar: './img/avatar_1.jpg',
@@ -169,24 +169,54 @@ createApp({
 					],
 				},
 			],
+			currentContact: 0,
+			currentMessage: null,
+			messageText: " ",
+			search: " ",
+		}
+	},
+	methods: {
+		setIndexContact: function (position) {
+			this.currentIndex = position;
+		},
 
-            currentContact: 0,  //index contatto
-            currentMessage: null,   //index messaggio
-            messageText: "",    //campo vuoto messaggio
-            search: "",
-      
-        }
-    },
-    methods: {
-        setIndexContact: function(position) {
-            this.currentContact = position;
-            return this.currentContact;
-        },
+		sendMessage: function (contact	) {
+			
+				const newMessage = {
+					date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+					message: this.messageText,
+					status: 'sent'
+				}
+				
+			this.filteredContacts[contact].messages.push(newMessage);
+			this.messageText = '';
 
-    },
-  
-    mounted () {
-        console.log('Vue Ok!');
-        
-    }
+			// setTimeout(
+			// 	()=> {
+			// 		let newReceivedMessage = {
+			// 			date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+			// 			text: "Ok",
+			// 			status: 'received'
+			// 		};
+
+			// 		this.filteredContacts[contact].messages.push(newReceivedMessage);
+
+			// 	},1000
+			// )
+
+		},
+
+		filteredContacts() {
+			return this.contacts.filter(
+				element => {
+					return element.name.toLocaleLowerCase().includes(this.search.toLowerCase());
+				}
+			);
+		}
+	},
+
+	mounted() {
+		console.log('Vue Ok!');
+
+	}
 }).mount('#app')
