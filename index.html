@@ -61,8 +61,13 @@
                     </div>
 
                     <div class="search">
-                        <input class="search-input" type="text" placeholder=" Cerca o inizia una nuova chat" 
-                            v-model="search" @keydown.enter="filteredContacts()">
+                        <div class="input-group">
+                            <span class="group-icon">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </span>
+                            <input class="search-input" type="text" placeholder="          Cerca o inizia una nuova chat" 
+                                v-model="search" @keydown.enter="filteredContacts()">
+                        </div>
                     </div>
 
                     <!-- LISTA CONTATTI -->
@@ -104,7 +109,7 @@
                     <div class="toolbar">
                         <span class="icon-header"><i class="fa-regular fa-face-smile"></i></span>
                         <input class="input_message" type="text" placeholder="Scrivi messaggio"
-                            v-model="messageText" @keydown.enter="sendMessage(currentContact)">
+                            v-model="messageText" @keyup.enter="sendMessage(currentContact)">
                         <span class="icon-header"><i class="fa-solid fa-microphone"></i></span>
                     </div>
                 </div> 

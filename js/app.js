@@ -176,11 +176,11 @@ createApp({
 		}
 	},
 	methods: {
-		setIndexContact: function (position) {
+		setIndexContact (position) {
 			this.currentIndex = position;
 		},
-
-		sendMessage: function (contact	) {
+			
+		sendMessage (contact) {
 			
 				const newMessage = {
 					date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
@@ -188,7 +188,7 @@ createApp({
 					status: 'sent'
 				}
 				
-			this.filteredContacts[contact].messages.push(newMessage);
+			this.contacts[currentIndex].messages.push(newMessage);
 			this.messageText = '';
 
 			// setTimeout(
