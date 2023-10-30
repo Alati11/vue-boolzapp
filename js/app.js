@@ -183,22 +183,19 @@ createApp({
 			const text = this.messageText.trim();
 			if (text !== '') {
 				const newMessage = {
-					date: '', //dayjs().format('DD/MM/YYYY HH:mm:ss'),
+					date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
 					message: text,
 					status: 'sent'
 				}
-				// this.filteredContacts[contact].messages.push(newMessage);
 				this.contacts[currentIndex].messages.push(newMessage);
 				this.messageText = '';
 			}
 
-
-
 			setTimeout(
 				()=> {
 					let newReceivedMessage = {	
-						date: '', //dayjs().format('DD/MM/YYYY HH:mm:ss'),
-						text: "Ok",
+						date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+						message: " Ok ",
 						status: 'received'
 					};
 
