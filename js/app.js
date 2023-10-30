@@ -180,7 +180,7 @@ createApp({
 			this.currentIndex = position;
 		},
 
-		sendMessage (currentContact) {
+		sendMessage (contact) {
 			
 				const text = this.newTextMessage.trim()
 				if (text !== ' '){ 
@@ -190,13 +190,14 @@ createApp({
 					status: 'sent'
 					}
 					// this.filteredContacts[contact].messages.push(newMessage);
-					this.filteredContacts[contact].messages.push(newMessage);
+					this.contacts[contact].messages.push(newMessage);	
 				}
 					this.messageText = '';
+					
 
 			// setTimeout(
 			// 	()=> {
-			// 		let newReceivedMessage = {
+			// 		let newReceivedMessage = {	
 			// 			date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
 			// 			text: "Ok",
 			// 			status: 'received'
@@ -215,7 +216,7 @@ createApp({
 					return element.name.toLocaleLowerCase().includes(this.search.toLowerCase());
 				}
 			);
-		}
+		}	
 	},
 
 	mounted() {
