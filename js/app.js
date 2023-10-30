@@ -169,44 +169,43 @@ createApp({
 					],
 				},
 			],
-			currentContact: 0,
 			currentMessage: null,
 			messageText: " ",
 			search: " ",
 		}
 	},
 	methods: {
-		setIndexContact (position) {
+		setIndexContact(position) {
 			this.currentIndex = position;
 		},
 
-		sendMessage (contact) {
-			
-				const text = this.newTextMessage.trim()
-				if (text !== ' '){ 
-					const newMessage = {
-					date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
-					message: this.messageText,
+		sendMessage(currentIndex) {
+			const text = this.messageText.trim();
+			if (text !== '') {
+				const newMessage = {
+					date: '', //dayjs().format('DD/MM/YYYY HH:mm:ss'),
+					message: text,
 					status: 'sent'
-					}
-					// this.filteredContacts[contact].messages.push(newMessage);
-					this.contacts[contact].messages.push(newMessage);	
 				}
-					this.messageText = '';
-					
+				// this.filteredContacts[contact].messages.push(newMessage);
+				this.contacts[currentIndex].messages.push(newMessage);
+				this.messageText = '';
+			}
 
-			// setTimeout(
-			// 	()=> {
-			// 		let newReceivedMessage = {	
-			// 			date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
-			// 			text: "Ok",
-			// 			status: 'received'
-			// 		};
 
-			// 		this.filteredContacts[contact].messages.push(newReceivedMessage);
 
-			// 	},1000
-			// )
+			setTimeout(
+				()=> {
+					let newReceivedMessage = {	
+						date: '', //dayjs().format('DD/MM/YYYY HH:mm:ss'),
+						text: "Ok",
+						status: 'received'
+					};
+
+					this.contacts[currentIndex].messages.push(newReceivedMessage);
+
+				},1000
+			)
 
 		},
 
@@ -216,7 +215,7 @@ createApp({
 					return element.name.toLocaleLowerCase().includes(this.search.toLowerCase());
 				}
 			);
-		}	
+		}
 	},
 
 	mounted() {

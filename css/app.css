@@ -123,7 +123,6 @@ align-items: center;
 
 .contacts {
 	overflow-y: scroll;
-
 }
 
 .contact-card {
@@ -133,7 +132,7 @@ align-items: center;
 }
 
 .active {
-	background-color: gray;
+	background-color: lightgrey;
 }
 
 .contact__info {
@@ -186,6 +185,7 @@ align-items: center;
     flex-direction: column; 
     gap: 13px;
     padding: 30px;
+    overflow-y:  scroll;
 }
 
 .message {

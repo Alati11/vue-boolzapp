@@ -74,10 +74,9 @@
                     <!-- LISTA CONTATTI -->
                     <ul class="contacts">
                         <li v-for="(contact, index) in contacts"
-                            :key="i"
+                            :key="index"
                             class="contact"
-                            :class="{'active': i === currentIndex}"
-                            :class="(index == currentContact ? 'active' : null)" 
+                            :class="{'active': index === currentIndex}" 
                             @click="setIndexContact(index)">
                         
                             <div class="contact-card">
@@ -109,7 +108,7 @@
                     <div class="toolbar">
                         <span class="icon-header"><i class="fa-regular fa-face-smile"></i></span>
                         <input class="input_message" type="text" placeholder=" Scrivi messaggio"
-                            v-model="messageText" @keydown.enter="sendMessage(currentContact)">
+                            v-model="messageText" @keydown.enter="sendMessage(currentIndex)">
                         <span class="icon-header"><i class="fa-solid fa-microphone"></i></span>
                     </div>
                 </div> 
