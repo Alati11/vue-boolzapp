@@ -171,7 +171,12 @@ createApp({
 			],
 			currentMessage: null,
 			messageText: " ",
+			filterMsg: " ",
 			search: " ",
+			visible: true,
+			inputSearch: ""
+			
+
 		}
 	},
 	methods: {
@@ -208,24 +213,14 @@ createApp({
 
 		
 		searchContact(){
-
-            
             let search = this.filterMsg.toLowerCase();
-
-            console.log(search);
-
-            
-            this.contacts.forEach((utente) => {
-
-                if (contacts.name.toLowerCase().includes(search)) {
-                    
-                    contacts.visible = true;
+            this.contacts.forEach((contact) => {
+                if (contact.name.toLowerCase().includes(search)) {
+                    contact.visible = true;
                 } else {
-                    
-                    contacts.visible = false;
+                    contact.visible = false;
                 }
             });
-
         },
 	},
 
@@ -233,4 +228,4 @@ createApp({
 		console.log('Vue Ok!');
 
 	}
-}).mount('#app')
+}).mount('#app')	

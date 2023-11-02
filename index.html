@@ -34,7 +34,7 @@
                 <div class="col-8 header-page__avatar">
                     <div class="card">
                         <div class="card-img">
-                            <img class="img-icon" src="./img/avatar_1.jpg" alt="">
+                            <img class="img-icon" :src="contacts[currentIndex].avatar" alt="" />
                             <div>
                                 <h4 class="text-name">{{contacts[currentIndex].name }}</h4>
                                 <p class="contact__text">Ultimo accesso oggi alle 12:00</p>
@@ -68,8 +68,10 @@
                             <span class="group-icon">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </span>
-                            <input class="search-input" type="text" placeholder="          Cerca o inizia una nuova chat" 
-                                v-model="filterMsg" @keyup="searchContact()">
+                            <input class="search-input" type="text" placeholder="          Cerca o inizia una nuova chat"
+                                v-model.trim="inputSearch"
+                            > 
+                            
                         </div>
                     </div>
 
@@ -78,9 +80,15 @@
                         <li v-for="(contact, index) in contacts"
                             :key="index"
                             class="contact"
-                            :class="{'active': index === currentIndex}" 
-                            @click="setIndexContact(index)">
-                        
+                            @click="setIndexContact(index)"
+                            :class="{
+                                'active': index === currentIndex,
+                                'hidden': contact.name.toLowerCase().includes(inputSearch.toLowerCase()) === false
+
+                            }" 
+                            >
+
+
                             <div class="contact-card">
                                 <figure class="contact-img">
                                     <img class="img-icon" :src="contact.avatar" alt="">
@@ -90,7 +98,6 @@
                                     <p class="contact__text">Ultimo messaggio inviato</p>
                                 </div>
                                 <span class="time">12:00</span>
-                                
                             </div>
                             
                         </li>   

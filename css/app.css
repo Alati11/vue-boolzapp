@@ -101,6 +101,9 @@ align-items: center;
 }
 
 /* CONTACT */
+.hidden {
+    display:none;
+}
 .icon-notification {
     font-size: 25px;
     padding: 5px;
